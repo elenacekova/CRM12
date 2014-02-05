@@ -1,0 +1,288 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent WebKit from resizing text to fit */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+body {
+
+
+  
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+#btn-group-hidden{
+display:none;
+}
+
+.container, body, html {
+	margin:0!important;
+	padding:0!important;
+}
+
+.result {
+	overflow: hidden;
+	clear:both;
+	background-color: rgba(45,68,100,0.5);
+}
+
+.result-container {
+	overflow: hidden;
+	clear:both;
+	/*background-color: rgba(29,44,63,0.2);*/	
+}
+
+.btn-group {
+	margin: 15px 0;
+	padding: 0 12px;
+	text-align:center;
+}
+.btn-group .btn-default {
+	background-color:transparent;
+	width: 33.33%;
+	border-color: #bbb;
+	color: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box;
+}
+.btn-group .btn-default.active {
+	background-color: #bbb;
+	color: #000;
+	box-shadow:none!important;
+}
+
+.result-container .row-item {
+	line-height:32px;
+	border-bottom: 1px solid #000;
+	overflow: hidden;
+	clear:both;
+	font-size: 16px;
+	color: #fff;
+	padding: 0 10px;
+	background-color: rgba(45,68,100,0.7);	
+}
+.result-container .row-item.child{
+   border:none;
+   background-color: rgba(45,68,100,0);
+}
+
+/*  .result-container .row-item img:first-child {
+	height:24px;
+	width:24px;
+	margin: 0 10px 0 0;
+}  */
+
+.login {
+	position: absolute;
+	top: 50%;
+	left:15px;
+	right:15px;
+	padding: 0;
+	margin: -90px 0 0 0;
+	overflow:hidden;
+	clear:both;
+	background: #eee; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px;
+}
+.login h1 {
+	color: #555;
+	margin: 8px 0;
+	padding:0;
+	text-align: center;
+	font-size: 14px;
+}
+.login-container {
+	padding:0 10px;
+}
+.login .login-input {
+	color: #888;
+	padding: 0 6px;
+	line-height: 28px;
+	height: 30px;
+	width: 100%;
+	margin: 0 auto 10px auto;
+	border: 1px solid #ddd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box;
+}
+.login .login-btn {
+	border:none;
+	border-top: 1px solid #ddd;
+	width: 50%;
+	color: rgb(22,152,225);
+	background: #eee;
+	float:left;
+	margin:0!important;
+	outline: none;
+	height: 36px;
+	line-height: 34px;
+	font-weight: bold;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box;
+	-webkit-border-radius: 0 0 5px 0; 
+	-moz-border-radius: 0 0 5px 0; 
+	border-radius: 0 0 5px 0;
+}
+.login .login-btn.cancel {
+	border-right: 1px solid #ddd;
+	font-weight: normal;
+	-webkit-border-radius: 0 0 0 5px !important; 
+	-moz-border-radius: 0 0 0 5px !important; 
+	border-radius: 0 0 0 5px !important;
+}
+
+.modal-body{
+padding: 20px 20px !important;
+}
+
+.modal-body-div{
+width:50%;
+float:left;
+padding: 5px 10px;
+-webkit-box-sizing: border-box !important;
+-moz-box-sizing: border-box !important;   
+box-sizing: border-box !important;
+}
+
+.modal-body .modal-body-div span{
+float:left;
+padding:0 0 0 5px;
+}
+
+.modal-body .modal-body-div:first-child span{
+float:right;
+padding:0 5px 0 0;
+}
+
+.result-container .row-item.completed{
+text-decoration:line-through;
+color: #bbb;
+}
+
+.result-container .img_btn{
+height:24px;
+width:24px;
+float:left;
+margin: 4px 10px 4px 0;
+}
+.img_btn.open{
+background: url(../img/add.png) 0 0 no-repeat;
+}
+.img_btn.completed{
+background: url(../img/tick.png) 0 0 no-repeat;
+}
+.img_btn.cancelled{
+background: url(../img/block.png) 0 0 no-repeat;
+}
+
+
+.noDataMessage{
+display:none;
+position:absolute;
+top:50%;
+left:50px;
+right:50px;
+margin: -60px 0 0 0;
+padding: 40px;
+font-size:20px;
+text-align:center;
+background: #eee; 
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;   
+box-sizing: border-box;
+}

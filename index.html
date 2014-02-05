@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap-responsive.min.css" />
+    <script type="text/javascript" src="modernizr-2.7.1.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+  </head>
+  <body onload="onLoad()">
+
+
+   
+    <div class="container">
+
+      <div class="clearfix" id="login">
+        <div class="login">
+          <div class="login-container">
+            <h1 class='titleClass'>Upišite pristupne podatke</h1>
+            <input type="text" id="inputEmail" class="login-input" value="" placeholder="Korisnik"/>
+            <input type="password" id="password" class="login-input" value="" placeholder="Lozinka"/>
+          </div>
+          <button type="button" id="btn_cancel" class="login-btn cancel">Cancel</button>
+          <button type="button" id="btn_ok" class="btn btn-success">OK</button>
+        </div>
+      </div>
+
+      
+
+       <div class="result">
+        <div id="btn-group-hidden" class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-default" name="svi">svi</button>
+          <button type="button" class="btn btn-default" name="preostali">preostali</button>
+          <button type="button" class="btn btn-default" name="evidentirani">evidentirani</button>
+        </div>
+        <div class="result-container"></div>
+        <div id="count"></div>
+      </div>
+
+      <input type="hidden" id="hiddenField" value=""/>
+      <div class="noDataMessage"><div>There is no data of this voting place!</div></div>
+
+     
+      
+      
+    </div>   <!-- /.end of container div -->
+
+  </body>
+</html>
